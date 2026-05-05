@@ -32,4 +32,10 @@ $(document).ready(function() {
             sync: true,
         },
     });
+
+    $("#MicBtn").click(function() {
+        $("#Oval").attr("hidden", true);
+        $("#SiriWave").attr("hidden", false);
+        eel.playMicSound();
+    });
 });
