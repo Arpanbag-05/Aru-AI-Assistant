@@ -4,7 +4,7 @@ import eel
 def speak(text):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
-    print(voices)
+    #print(voices)
     engine.setProperty('voice', voices[1].id)
     engine.setProperty('rate', 170)
     engine.say(text)
@@ -25,7 +25,7 @@ def takeCommand():
         eel.DisplayMessage('Recognizing...')
         query = r.recognize_google(audio, language='en')
         print(f'User said: {query}')
-        speak(query)
+        #speak(query)
         eel.DisplayMessage(query)
         eel.ShowHood()
 
@@ -37,3 +37,14 @@ def takeCommand():
 # text= takeCommand()
     
 # speak(text)
+
+@eel.expose
+def allCommands():
+    query = takeCommand()
+    print(query)
+
+    if'open' in query:
+        from engine.features import openCommand
+        openCommand(query)
+    else:
+        print('Not run')
