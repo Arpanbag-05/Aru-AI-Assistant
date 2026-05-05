@@ -10,4 +10,4 @@ def playAssistantSound():
 @eel.expose
 def playMicSound():
     music_dir = "www\\assets\\audio\\Click_Mic.mp3"
-    playsound(music_dir)    
+    playsound(music_dir)
