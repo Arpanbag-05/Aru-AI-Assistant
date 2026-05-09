@@ -13,3 +13,12 @@ $(document).ready(function (){
         $("#SiriWave").attr("hidden", true);
     }
 });
+// UPDATE RESPONSE TEXT
+function updateResponse(response) {
+    document.getElementById("output").innerText = response;
+}
+
+// Expose to Python
+if (typeof eel !== 'undefined') {
+    eel.expose(updateResponse);
+}
